@@ -41,5 +41,18 @@ def mean_tree_size(number_of_elements, size, dissimilarity_possibilities):
 # Malgré cela, après maintes essais voilà ce que j'ai pu recueillir :
 # - 100 / 5 / 10 : 1,44
 
-
-
+# Voici un exemple du problème rencontré :
+# problème de NoneType
+# distance = {}
+# distance[frozenset({frozenset({'A'}), frozenset({'B'})})] = 8
+# distance[frozenset({frozenset({'A'}), frozenset({'C'})})] = 2
+# distance[frozenset({frozenset({'A'}), frozenset({'D'})})] = 6
+# distance[frozenset({frozenset({'A'}), frozenset({'E'})})] = 8
+# distance[frozenset({frozenset({'B'}), frozenset({'C'})})] = 1
+# distance[frozenset({frozenset({'B'}), frozenset({'D'})})] = 7
+# distance[frozenset({frozenset({'B'}), frozenset({'E'})})] = 4
+# distance[frozenset({frozenset({'C'}), frozenset({'D'})})] = 2
+# distance[frozenset({frozenset({'C'}), frozenset({'E'})})] = 7
+# distance[frozenset({frozenset({'D'}), frozenset({'E'})})] = 2
+#
+# print(the_algorithm(distance, f_minimum, update_weighted_mean))
